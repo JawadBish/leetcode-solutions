@@ -2,28 +2,33 @@ package lists.linkedlist;
 
 public class myMain {
     public static void main(String[] args) {
-        LinkedList myLinkedList = new LinkedList(4);
-//        myLinkedList.getHead();
-//        myLinkedList.getTail();
-//        myLinkedList.getLength();
-//        myLinkedList.printList();
-
-        myLinkedList.append(5);
-        myLinkedList.append(7);
-//        myLinkedList.append(9);
-//        myLinkedList.printList();
+        LinkedList myLinkedList = new LinkedList(1);
+//        myLinkedList.append(2);
+//        myLinkedList.prepend(3);
 //        myLinkedList.removeLast();
-
+//        System.out.println("Remove Last:");
 //        myLinkedList.printList();
-        myLinkedList.prepend(1);
-        myLinkedList.prepend(2);
 //        myLinkedList.removeFirst();
-        System.out.println("my List : ");
-        myLinkedList.printList();
-        System.out.println("my index value : ");
-        System.out.println(myLinkedList.get(3).value);
-//        System.out.println("my List : ");
+//        System.out.println("Remove First");
 //        myLinkedList.printList();
-
+//        myLinkedList.append(4);
+//        myLinkedList.append(5);
+//        myLinkedList.append(6);
+//        System.out.println("Index 2 : " + myLinkedList.get(2).value);
+//        myLinkedList.set(2,7);
+//        System.out.println("Index 2 : " + myLinkedList.get(2).value);
+        myLinkedList.append(2);
+        myLinkedList.insert(0,8);
+        myLinkedList.printList();
+        myLinkedList.remove(0);
+        myLinkedList.printList();
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+        myLinkedList.printList();
+        myLinkedList.reverse();
+        myLinkedList.printList();
+        myLinkedList.reverse();
+        myLinkedList.printList();
     }
 }
