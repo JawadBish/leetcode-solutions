@@ -10,7 +10,11 @@ public class myMain {
 
         myLinkedList.append(5);
         myLinkedList.append(7);
-        myLinkedList.append(9);
+//        myLinkedList.append(9);
         myLinkedList.printList();
+        myLinkedList.removeLast();
+
+        myLinkedList.printList();
+
     }
 }
