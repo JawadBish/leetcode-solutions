@@ -27,9 +27,9 @@ public class LinkedList {
     }
 
     public Node removeLast() {
-      if (length == 0) {
-          return null;
-      }
+        if (length == 0) {
+            return null;
+        }
         Node pre = head;
         Node temp = head;
         while (temp.next != null) {
@@ -39,14 +39,38 @@ public class LinkedList {
         tail = pre;
         tail.next = null;
         length--;
-        if (length == 0 ) {
+        if (length == 0) {
             head = null;
             tail = null;
         }
-    return temp;
+        return temp;
     }
 
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
 
+    public Node removeFirst() {
+        Node newNode = head;
+        if (length == 0) return null;
+        else {
+            head = head.next;
+            newNode.next = null;
+            length--;
+        }
+            if( length == 0 ) {
+                tail = null;
+            }
+        return newNode;
+    }
 
     public void printList() {
         Node temp = head;

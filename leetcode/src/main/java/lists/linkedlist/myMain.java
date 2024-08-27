@@ -15,6 +15,11 @@ public class myMain {
         myLinkedList.removeLast();
 
         myLinkedList.printList();
+        myLinkedList.prepend(1);
+        myLinkedList.prepend(2);
+        myLinkedList.removeFirst();
+
+        myLinkedList.printList();
 
     }
 }
