@@ -11,15 +11,19 @@ public class myMain {
         myLinkedList.append(5);
         myLinkedList.append(7);
 //        myLinkedList.append(9);
-        myLinkedList.printList();
-        myLinkedList.removeLast();
+//        myLinkedList.printList();
+//        myLinkedList.removeLast();
 
-        myLinkedList.printList();
+//        myLinkedList.printList();
         myLinkedList.prepend(1);
         myLinkedList.prepend(2);
-        myLinkedList.removeFirst();
-
+//        myLinkedList.removeFirst();
+        System.out.println("my List : ");
         myLinkedList.printList();
+        System.out.println("my index value : ");
+        System.out.println(myLinkedList.get(3).value);
+//        System.out.println("my List : ");
+//        myLinkedList.printList();
 
     }
 }
