@@ -1,0 +1,37 @@
+ArrayList
+add(): O(1) (amortized), O(n) (worst case when resizing)
+add(index, element): O(n)
+get(index): O(1)
+remove(index): O(n)
+contains(): O(n)
+
+LinkedList
+add(): O(1)
+add(index, element): O(n)
+get(index): O(n)
+remove(index): O(n)
+contains(): O(n)
+
+HashMap
+put(key, value): O(1) (amortized)
+get(key): O(1)
+remove(key): O(1)
+containsKey(): O(1)
+containsValue(): O(n)
+
+TreeMap
+put(key, value): O(log n)
+get(key): O(log n)
+remove(key): O(log n)
+containsKey(): O(log n)
+containsValue(): O(n)
+
+HashSet
+add(): O(1) (amortized)
+remove(): O(1)
+contains(): O(1)
+
+TreeSet
+add(): O(log n)
+remove(): O(log n)
+contains(): O(log n)
