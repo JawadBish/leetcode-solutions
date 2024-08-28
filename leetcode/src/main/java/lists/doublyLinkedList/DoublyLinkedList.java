@@ -82,5 +82,12 @@ public class DoublyLinkedList {
 
 /* TODO: append, remove last, prepend, remove first, get, set, insert, remove.   */
 
+    public void swapFirstLast() {
+        if ( length  < 2 ) return;
+        int dummy = head.value;
+        head.value = tail.value;
+        tail.value = dummy;
+        }
+
 }
 
