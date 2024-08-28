@@ -1,5 +1,7 @@
 package lists.linkedlist;
 
+import java.util.HashSet;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -66,9 +68,9 @@ public class LinkedList {
             newNode.next = null;
             length--;
         }
-            if( length == 0 ) {
-                tail = null;
-            }
+        if (length == 0) {
+            tail = null;
+        }
         return newNode;
     }
 
@@ -101,15 +103,16 @@ public class LinkedList {
     }
 
     public Node get(int index) {
-        if ( index < 0 || index > length) {
+        if (index < 0 || index > length) {
             return null;
         }
         Node temp = head;
-        for (int i = 0 ; i  < index ; i++) {
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
         return temp;
     }
+
     public boolean set(int index, int value) {
         Node temp = get(index);
         if (temp != null) {
@@ -119,7 +122,7 @@ public class LinkedList {
         return false;
     }
 
-    public boolean insert(int index, int value)  {
+    public boolean insert(int index, int value) {
         if (index < 0 || index > length) return false;
         if (index == 0) {
             prepend(value);
@@ -157,7 +160,7 @@ public class LinkedList {
         tail = temp;
         Node after = temp.next;
         Node before = null;
-        for ( int i = 0 ; i < length ; i++) {
+        for (int i = 0; i < length; i++) {
             after = temp.next;
             temp.next = before;
             before = temp;
@@ -165,5 +168,66 @@ public class LinkedList {
         }
     }
 
+    public void partitionList(int x) {
+        if (head == null) return;
+        Node current = head;
+        Node small = new Node(0);
+        Node large = new Node(0);
+        Node prevSmall = small;
+        Node prevLarge = large;
+
+        while (current != null) {
+            if (current.value < x) {
+                prevSmall.next = current;
+                prevSmall = current;
+            } else {
+                prevLarge.next = current;
+                prevLarge = current;
+
+            }
+            current = current.next;
+        }
+        prevLarge.next = null;
+        prevSmall.next = large.next;
+        head = small.next;
+    }
+
+    public void removeDuplicates() {
+        HashSet<Integer> set = new HashSet<>();
+        Node current = head;
+        Node prev = null;
+        while (current != null) {
+            if (set.add(current.value)) {
+                prev = current;
+                current = current.next;
+            } else {
+                prev.next = current.next;
+                current = current.next;
+            }
+        }
+    }
+
+    public void reverseBetween(int startIndex, int endIndex) {
+        if (head == null) return;
+
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+        Node previousNode = dummyNode;
+
+        for (int i = 0; i < startIndex; i++) {
+            previousNode = previousNode.next;
+        }
+
+        Node currentNode = previousNode.next;
+
+        for (int i = 0; i < endIndex - startIndex; i++) {
+            Node nodeToMove = currentNode.next;
+            currentNode.next = nodeToMove.next;
+            nodeToMove.next = previousNode.next;
+            previousNode.next = nodeToMove;
+        }
+
+        head = dummyNode.next;
+    }
 
 }
